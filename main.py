@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import sys
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def print_help():
+    print("Usage: python3 ./run_sp2.py -i <input file> -o <output file>")
+    sys.exit()
 
+if(len(sys.argv) != 5):
+    help("Usage: python3 ./run_sp2.py -i <input file> -o <output file>")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+if(sys.argv[1] != "-i" and sys.argv[3] != "-o"):
+    help()
 
+input_file = sys.argv[2].strip()
+output_file = sys.argv[4].strip()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+with open(input_file) as f:
+    lines = f.read().splitlines()
