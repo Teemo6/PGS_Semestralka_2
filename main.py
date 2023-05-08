@@ -13,11 +13,11 @@ def print_help():
     sys.exit()
 
 # Argument count
-if(len(sys.argv) != 5):
+if len(sys.argv) != 5:
     print_help()
 
 # Required arguments
-if(sys.argv[1] != "-i" and sys.argv[3] != "-o"):
+if sys.argv[1] != "-i" and sys.argv[3] != "-o":
     print_help()
 
 # Loading arguments
@@ -41,6 +41,7 @@ ferryCount = 0
 ferryTime = 0
 
 # Lists of objects
+words = []
 workers = {}
 vehicles = {}
 
